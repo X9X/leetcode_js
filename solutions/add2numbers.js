@@ -19,8 +19,6 @@ var addTwoNumbers = function(l1, l2) {
         pointer.value = t % 10;
         flag = t > 9 ? 1 : 0
     }
-    if(l1_pointer.value === 0) return l2;
-    if(l2_pointer.value === 0) return l1;
     //add l2 to l1
     while(l1_pointer.next && l2_pointer.next){
         total(l1_pointer,l2_pointer.value + flag);
