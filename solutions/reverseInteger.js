@@ -12,3 +12,12 @@ var reverse = function(x) {
     var number = parseInt(digits.reverse().join(''),10);
     return isPositive ? number : 0 - number;
 };
+
+
+function A(){
+    'use strict'
+    function b(){
+        console.log(this);
+    }
+    b()
+}
