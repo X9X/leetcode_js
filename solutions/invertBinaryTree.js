@@ -10,8 +10,10 @@
  * @return {TreeNode}
  */
 var invertTree = function(root) {
-    if(!root) return null;
-    if(!root.left && !root.right){
+    if (!root){
+        return null;
+    }
+    if (!root.left && !root.right) {
         return root;
     }
     let tmp = root.left;
