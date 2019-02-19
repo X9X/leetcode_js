@@ -9,21 +9,22 @@ var findShortestSubArray = function(nums) {
   var result = 50000;
 
   for(var i = 0, len = nums.length; i < len; i++) {
-    if (!info[nums[i]]) {
-      info[nums[i]] = {
+    var ele = nums[i];
+    if (!info[ele]) {
+      info[ele] = {
         count: 1,
         start: i,
         end: i
       }
     } else {
-      info[nums[i]].count += 1;
-      info[nums[i]].end = i;
+      info[ele].count += 1;
+      info[ele].end = i;
     }
-    if (degree < info[nums[i]].count) {
-      degree = info[nums[i]].count;
-      result = info[nums[i]].end - info[nums[i]].start + 1;
-    } else if (degree === info[nums[i]].count) {
-      result = Math.min(info[nums[i]].end - info[nums[i]].start + 1, result);
+    if (degree < info[ele].count) {
+      degree = info[ele].count;
+      result = info[ele].end - info[ele].start + 1;
+    } else if (degree === info[ele].count) {
+      result = Math.min(info[ele].end - info[ele].start + 1, result);
     }
 
   }
